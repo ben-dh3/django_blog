@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+{% for post in post_list %}
+<div>
+  <a href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
+  <p>{{ post.created_on }}</p>
+</div>
+<hr>
+{% endfor %}
+{% endblock content %}
