@@ -1,7 +1,12 @@
 {% load markdown_extras %}
 
 {% block content %}
-<div>
+<div style="display:block;
+justify-content: center;
+align-items: center;
+height: 100vh;
+width: 50%;
+margin:auto;">
   <h2>{{ post.title }}</h2>
   <p>{{ post.content | markdown | safe }}</p>
 </div>
