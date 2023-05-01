@@ -1,0 +1,26 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  /* Center content on any device */
+  .container {
+    display:block;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 50%;
+    margin:auto;
+  }
+  
+  /* Style the subscribe button */
+  .subscribe-btn {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
