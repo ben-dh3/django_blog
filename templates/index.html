@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'django_app.css' %}">
+</head>
+<body>
+  <div class="container">  
+    <h1>Ben Duffield-Harding's website</h1>
+    <form action="{% url 'subscribe' %}" method="post">
+      <div class="subscribe-btn">
+        {% csrf_token %} 
+          <div>
+              <input id="name" name="name" type="name" class="form-control" placeholder="Name"/>
+          </div>
+          <div>
+              <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
+          </div>
+          <div>
+            <button type="submit" id="subscribeBtn">Subscribe</button>
+          </div>
+      </div>
+    </form>      
+    {% block content %}
+
+    {% endblock content %}
+  </div>
+</body>

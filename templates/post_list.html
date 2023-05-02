@@ -2,7 +2,7 @@
 
 {% block content %}
 {% for post in post_list %}
-<div class="post_list">
+<div>
   <a style="text-decoration: none;"href="{% url 'post_detail' post.slug %}">{{ post.title }}</a>
   <p>{{ post.created_on }}</p>
 </div>
