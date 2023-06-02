@@ -1,8 +1,10 @@
 asgiref==3.6.0
 dj-database-url==2.0.0
 Django==4.2
+django-taggit==4.0.0
 gunicorn==20.1.0
+Markdown==3.2.1
+Pillow==9.5.0
 psycopg2-binary==2.9.6
 sqlparse==0.4.4
 typing_extensions==4.5.0
-Markdown==3.4.3
