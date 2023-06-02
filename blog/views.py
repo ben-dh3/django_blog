@@ -1,14 +1,24 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from .models import Post
 from .models import SubscribedUsers
 from django.contrib import messages
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from taggit.models import Tag
+
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     template_name = 'post_list.html'
+
+def post_list(request, tag_slug=None):
+    tag = None
+    global posts
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags__in=[tag])
+    return render(request,'post_list.html',{'posts':posts,'tag':tag})
 
 class PostDetail(generic.DetailView):
     model = Post

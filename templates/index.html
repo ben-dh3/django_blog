@@ -6,10 +6,11 @@
   <link rel="stylesheet" href="{% static 'django_app.css' %}">
 </head>
 <body>
-  <div class="container">  
+  <div >  
     <h1>Ben Duffield-Harding's website</h1>
-    <form action="{% url 'subscribe' %}" method="post">
+    
       <div class="subscribe-btn">
+        <form action="{% url 'subscribe' %}" method="post">
         {% csrf_token %} 
           <div>
               <input id="name" name="name" type="name" class="form-control" placeholder="Name"/>
@@ -18,12 +19,17 @@
               <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
           </div>
           <div>
-            <button type="submit" id="subscribeBtn">Subscribe</button>
+            <button type="submit">Subscribe For Updates</button>
           </div>
+        </form> 
       </div>
-    </form>      
-    {% block content %}
+       
+    <div>
+      {% block content %}
 
-    {% endblock content %}
+      {% endblock content %}
+
+    </div>  
+    
   </div>
 </body>
