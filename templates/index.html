@@ -3,33 +3,27 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static 'django_app.css' %}">
+  <link rel="stylesheet" href="{% static 'django_app.css' %}">  
 </head>
 <body>
-  <div >  
-    <h1>Ben Duffield-Harding's website</h1>
-    
+  <div>   
+    <h1>Welcome to Ben Duffield-Harding's website</h1>
       <div class="subscribe-btn">
         <form action="{% url 'subscribe' %}" method="post">
         {% csrf_token %} 
           <div>
-              <input id="name" name="name" type="name" class="form-control" placeholder="Name"/>
-          </div>
-          <div>
-              <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
-          </div>
-          <div>
+            <input id="name" name="name" type="name" class="form-control" placeholder="Name"/>            
+            <input id="email" name="email" type="email" class="form-control" placeholder="Email address"/>
             <button type="submit">Subscribe For Updates</button>
           </div>
         </form> 
-      </div>
-       
+      </div> 
     <div>
+
       {% block content %}
 
       {% endblock content %}
 
     </div>  
-    
   </div>
 </body>

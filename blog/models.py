@@ -17,7 +17,14 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
     tags = TaggableManager()
-    
+    summary = models.TextField(max_length=200,default='')
+    def image_upload_to(self, instance=None):
+        if instance:
+            return os.path.join('images', instance)
+        return None
+    image = models.ImageField(upload_to=image_upload_to, max_length=255)
+
+
 class Meta:
         ordering = ['-created_on']
 
@@ -28,3 +35,4 @@ class SubscribedUsers(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(unique=True, max_length=100)
     created_date = models.DateTimeField(auto_now=True)
+

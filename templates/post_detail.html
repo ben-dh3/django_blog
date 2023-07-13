@@ -3,7 +3,8 @@
 
 {% block content %}
 <div class="detail">
-  <h2>{{ post.title }}</h2>
+  <h2 class="title">{{ post.title }}</h2>
+  <p><img src="{{ object.image.url }}" width="50%" height="50%"></p>
   <p>{{ post.content | markdown | safe }}</p>
 </div>
 <hr>
