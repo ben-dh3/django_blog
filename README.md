@@ -1,6 +1,6 @@
-# Blog Made Using Django
+# Django Blog
 
-The blog is designed to be purely functional, with posts written in Markdown and stored using PostgreSQL. It is possible to write posts, create tags, and display uploaded photos in a post. The posts are displayed on the home page with the date and time of when it was posted, along with a short summary. Click the post and see the full content.
+I wrote this project to develop my Python skills, while learning Django, SQL and some DevOps - using DigitalOcean cloud services. It is possible to write posts, create tags, and display uploaded photos in a post. The posts are displayed on the home page with the date and time of when it was posted, along with a short summary. Click the post and see the full content.
 
 Made using Python, Django, PostgreSQL.
 
